@@ -9,7 +9,8 @@ module "lambda" {
   timeout       = var.lambda_timeout_seconds
   publish       = true
 
-  source_path = "${path.module}/src/"
+  source_path             = "${path.module}/src/"
+  ignore_source_code_hash = true
 
   environment_variables = merge(
     {
